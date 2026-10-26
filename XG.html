@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>♡ Cerita Tentang Aku ♡</title>
+<style>
+  :root {
+    --pink:#f4b8c8; --pink-dark:#a94d70; --cream:#fffaf7;
+    --lavender:#eee8ff; --mint:#e5f6ef; --ink:#493b47; --line:#eadde3;
+  }
+  * { box-sizing:border-box; }
+  body {
+    margin:0; color:var(--ink);
+    font-family:"Segoe UI",Arial,sans-serif;
+    background:linear-gradient(135deg,#fff4f7 0%,#f8f4ff 48%,#f1fbf6 100%);
+    line-height:1.6;
+  }
+  .page { width:min(900px,94%); margin:28px auto; }
+  .hero {
+    position:relative; overflow:hidden; text-align:center;
+    padding:38px 22px 32px; border-radius:28px;
+    background:rgba(255,255,255,.88); border:1px solid white;
+    box-shadow:0 12px 35px rgba(112,72,95,.10);
+  }
+  .hero:before,.hero:after { content:"♡"; position:absolute; color:#f2c5d2; font-size:64px; opacity:.55; }
+  .hero:before { left:20px; top:6px; transform:rotate(-15deg); }
+  .hero:after { right:22px; bottom:0; transform:rotate(14deg); }
+  .tiny { color:var(--pink-dark); letter-spacing:3px; font-size:13px; font-weight:700; }
+  h1 { margin:8px 0 10px; color:#9b4e70; font-size:clamp(27px,5vw,42px); line-height:1.2; }
+  .intro { max-width:580px; margin:0 auto; }
+  .note { font-size:13px; color:#866c7a; margin-top:13px; }
+  form { margin-top:20px; }
+  .section {
+    background:rgba(255,255,255,.92); border:1px solid #fff;
+    border-radius:22px; padding:24px; margin:17px 0;
+    box-shadow:0 7px 22px rgba(112,72,95,.07);
+  }
+  .section h2 { margin:0 0 7px; color:#98516f; font-size:20px; }
+  .hint { margin:0 0 16px; color:#786773; font-size:14px; }
+  label { display:block; font-weight:650; margin:12px 0 7px; }
+  input[type="text"], textarea {
+    display:block; width:100%; border:1.5px solid var(--line);
+    border-radius:13px; padding:13px 14px; color:var(--ink);
+    background:#fffdfd; font:inherit; outline:none; transition:.2s;
+  }
+  input[type="text"]:focus,textarea:focus { border-color:#d98ba7; box-shadow:0 0 0 3px #fbe7ee; }
+  textarea { min-height:125px; resize:vertical; }
+  .mood-grid { display:grid; grid-template-columns:repeat(5,1fr); gap:10px; }
+  .mood { display:flex; flex-direction:column; align-items:center; gap:5px; padding:13px 5px;
+    border:1.5px solid var(--line); border-radius:15px; cursor:pointer; background:#fff; font-size:13px; }
+  .mood input { accent-color:#b65f80; }
+  .mood .emoji { font-size:30px; }
+  .mood:has(input:checked) { border-color:#cc7d9b; background:#fff0f5; box-shadow:0 0 0 2px #f8dce6 inset; }
+  .drawing-box { background:#fff9fb; border:1px dashed #d9a6b8; border-radius:15px; padding:15px; }
+  .drawing-box p { margin:0 0 8px; font-size:14px; }
+  input[type="file"] { max-width:100%; font:inherit; font-size:14px; }
+  #preview { display:none; max-width:100%; max-height:300px; object-fit:contain; margin:12px auto 0; border-radius:12px; }
+  .actions { display:flex; gap:10px; flex-wrap:wrap; justify-content:center; padding:12px 0 24px; }
+  button { border:0; border-radius:999px; padding:13px 22px; font:inherit; font-weight:700; cursor:pointer; }
+  .primary { background:#b65f80; color:white; box-shadow:0 5px 12px #b65f802c; }
+  .secondary { background:white; color:#98516f; border:1px solid #e7c6d2; }
+  .footer { text-align:center; padding:18px 16px 30px; color:#8a6879; font-size:14px; }
+  #status { text-align:center; color:#39775e; font-weight:650; min-height:24px; }
+  .privacy { background:#f5f0ff; padding:12px 14px; border-radius:12px; font-size:13px; color:#716184; }
+  @media(max-width:560px) {
+    .page { width:94%; margin:12px auto; }
+    .hero { padding:32px 16px 25px; }
+    .hero:before { left:8px; font-size:42px; } .hero:after { right:8px; font-size:42px; }
+    .section { padding:18px; border-radius:18px; }
+    .mood-grid { grid-template-columns:repeat(3,1fr); }
+  }
+  @media print {
+    body { background:white; }
+    .page { width:100%; margin:0; }
+    .hero,.section { box-shadow:none; border:1px solid #ddd; break-inside:avoid; }
+    .actions,.note,.privacy { display:none; }
+    textarea,input[type="text"] { border:1px solid #bbb; }
+  }
+</style>
+</head>
+<body>
+<main class="page">
+  <header class="hero">
+    <div class="tiny">RUANG AMAN UNTUK BERCERITA</div>
+    <h1>♡ CERITA TENTANG AKU ♡</h1>
+    <p class="intro"><em>Setiap orang punya cerita.</em><br>Yuk saling mengenal, memahami, dan menyayangi. Isi dengan jujur dan nyaman, ya!</p>
+    <div class="note">Kelas X-G · MAN 1 Karanganyar</div>
+  </header>
+
+  <form id="storyForm">
+    <section class="section">
+      <h2>🌷 Tentang Diriku</h2>
+      <label for="nama">Nama lengkap</label>
+      <input type="text" id="nama" name="nama" placeholder="Tuliskan nama lengkapmu..." autocomplete="name">
+    </section>
+
+    <section class="section">
+      <h2>🎨 Gambar apa saja untuk mewakili kondisimu saat ini!</h2>
+      <p class="hint">Pilih emoji yang paling mendekati perasaanmu hari ini. Kamu juga boleh menambahkan gambar pilihanmu.</p>
+      <div class="mood-grid" role="group" aria-label="Pilih suasana hati">
+        <label class="mood"><input type="radio" name="mood" value="😊 Bahagia"><span class="emoji">😊</span><span>Bahagia</span></label>
+        <label class="mood"><input type="radio" name="mood" value="😌 Tenang"><span class="emoji">😌</span><span>Tenang</span></label>
+        <label class="mood"><input type="radio" name="mood" value="😴 Lelah"><span class="emoji">😴</span><span>Lelah</span></label>
+        <label class="mood"><input type="radio" name="mood" value="😟 Khawatir"><span class="emoji">😟</span><span>Khawatir</span></label>
+        <label class="mood"><input type="radio" name="mood" value="😔 Sedih"><span class="emoji">😔</span><span>Sedih</span></label>
+        <label class="mood"><input type="radio" name="mood" value="🥰 Bersyukur"><span class="emoji">🥰</span><span>Bersyukur</span></label>
+        <label class="mood"><input type="radio" name="mood" value="🤩 Bersemangat"><span class="emoji">🤩</span><span>Bersemangat</span></label>
+        <label class="mood"><input type="radio" name="mood" value="😶 Bingung"><span class="emoji">😶</span><span>Bingung</span></label>
+        <label class="mood"><input type="radio" name="mood" value="💗 Perasaan campur aduk"><span class="emoji">💗</span><span>Campur aduk</span></label>
+        <label class="mood"><input type="radio" name="mood" value="🌈 Lainnya"><span class="emoji">🌈</span><span>Lainnya</span></label>
+      </div>
+      <label for="ceritaPerasaan">Kalau mau, ceritakan sedikit alasan memilih gambar atau emoji tersebut.</label>
+      <textarea id="ceritaPerasaan" name="ceritaPerasaan" placeholder="Hari ini aku merasa..."></textarea>
+    </section>
+
+    <section class="section">
+      <h2>♡ 1. KELUARGAKU</h2>
+      <p class="hint">Siapa saja yang tinggal bersamamu? Ayah dan ibu bekerja sebagai apa? Ceritakan sedikit suasana keluargamu dan kegiatan yang biasa kamu lakukan bersama keluarga.</p>
+      <textarea name="keluarga" placeholder="Ceritakan tentang keluargamu di sini..."></textarea>
+    </section>
+
+    <section class="section">
+      <h2>⌂ 2. KEGIATANKU DI RUMAH</h2>
+      <p class="hint">Setelah pulang sekolah, biasanya kamu melakukan apa saja? Apa tanggung jawab atau pekerjaan rumah yang biasa kamu lakukan?</p>
+      <textarea name="rumah" placeholder="Biasanya setelah pulang sekolah aku..."></textarea>
+    </section>
+
+    <section class="section">
+      <h2>♧ 3. TEMAN & SEKOLAH</h2>
+      <p class="hint">Siapa teman yang paling dekat denganmu di sekolah, dan apa yang membuatmu nyaman dengannya? Bagaimana perasaanmu berada di kelas X-G?</p>
+      <textarea name="teman" placeholder="Tentang teman dan pengalamanku di kelas..."></textarea>
+    </section>
+
+    <section class="section">
+      <h2>☁ 4. SAAT AKU SEDIH ATAU TIDAK BERSEMANGAT</h2>
+      <p class="hint">Kalau sedang sedih, kecewa, lelah, atau punya masalah, biasanya apa yang kamu lakukan? Apa yang membantumu merasa lebih baik?</p>
+      <textarea name="sedih" placeholder="Saat sedang tidak bersemangat, biasanya aku..."></textarea>
+    </section>
+
+    <section class="section">
+      <h2>☀ 5. SUMBER SEMANGATKU</h2>
+      <p class="hint">Apa atau siapa yang membuatmu semangat menjalani hari? Apa hal sederhana yang bisa membuat harimu terasa lebih baik?</p>
+      <textarea name="semangat" placeholder="Hal yang membuatku semangat adalah..."></textarea>
+    </section>
+
+    <section class="section">
+      <h2>♡ 6. HAL PENTING TENTANG DIRIKU</h2>
+      <p class="hint">Apakah ada hal yang sedang kamu khawatirkan, kesulitan yang kamu alami, atau kebutuhan yang ingin wali kelas pahami? Kamu boleh berbagi secukupnya.</p>
+      <textarea name="penting" placeholder="Hal yang ingin wali kelas pahami (boleh dikosongkan)..."></textarea>
+    </section>
+
+    <section class="section">
+      <h2>💌 7. APA YANG INGIN KUSAMPAIKAN KEPADA WALI KELAS?</h2>
+      <p class="hint">Adakah pesan, harapan, saran, atau hal yang ingin kamu ceritakan kepada wali kelas? Kamu boleh menyampaikan apa pun dengan jujur dan sopan. Tidak harus panjang, dan boleh dikosongkan jika belum ingin berbagi.</p>
+      <textarea name="pesanWali" placeholder="Bu, ada hal yang ingin saya sampaikan..."></textarea>
+      <p class="privacy">♡ Terima kasih sudah percaya untuk berbagi. Setiap cerita akan dihargai.</p>
+    </section>
+
+    <div class="actions">
+      <button type="button" class="primary" id="saveBtn">♡ Simpan Jawaban</button>
+      <button type="button" class="secondary" id="printBtn">🖨 Cetak / Simpan PDF</button>
+      <button type="reset" class="secondary" id="resetBtn">↻ Reset Form</button>
+    </div>
+    <div id="status" role="status" aria-live="polite"></div>
+  </form>
+
+  <footer class="footer">
+    <strong>♡ Kamu boleh tidak menjawab hal yang terasa terlalu pribadi.</strong><br>
+    Terima kasih sudah berbagi cerita. Kamu berharga, dan ceritamu layak dihargai. ♡
+  </footer>
+</main>
+<script>
+const form = document.getElementById('storyForm');
+const statusBox = document.getElementById('status');
+
+document.getElementById('saveBtn').addEventListener('click', () => {
+  const data = {};
+  new FormData(form).forEach((value, key) => {
+    if (key !== 'gambar') data[key] = value;
+  });
+  const blob = new Blob([JSON.stringify(data, null, 2)], {type:'application/json;charset=utf-8'});
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement('a');
+  const safeName = (data.nama || 'cerita-tentang-aku').trim().replace(/[^a-z0-9_-]+/gi,'_');
+  link.href = url; link.download = safeName + '.json';
+  document.body.appendChild(link); link.click(); link.remove();
+  URL.revokeObjectURL(url);
+  statusBox.textContent = 'Jawaban berhasil diunduh ke perangkat ini. Simpan file dengan baik, ya.';
+});
+
+document.getElementById('printBtn').addEventListener('click', () => window.print());
+form.addEventListener('reset', () => {
+  statusBox.textContent = '';
+  setTimeout(() => { preview.style.display = 'none'; preview.removeAttribute('src'); }, 0);
+});
+</script>
+</body>
+</html>
